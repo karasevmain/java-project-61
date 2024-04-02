@@ -13,12 +13,16 @@ public class App {
                 break;
             case "1":
                 Engine.playGreet();
+                break;
             case "2":
                 Engine.playEven(gameRounds);
+                break;
             case "3":
                 Engine.playCalc(gameRounds);
+                break;
             default:
                 System.out.println("Error command number");
+                break;
         }
     }
     public static String sendGameList(String[] gameList) {
