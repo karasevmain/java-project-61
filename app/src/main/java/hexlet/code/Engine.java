@@ -21,11 +21,7 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
             String correctAnswer = number % 2 == 0 ? "yes" : "no";
-            if (correctAnswer.equalsIgnoreCase(userAnswer)) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            }
+            printResultRound(userAnswer, correctAnswer);
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -50,14 +46,16 @@ public class Engine {
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
-
-            if (userAnswer.equalsIgnoreCase(String.valueOf(correctAnswer))) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            }
+            printResultRound(userAnswer, String.valueOf(correctAnswer));
         }
         System.out.println("Congratulations, " + userName + "!");
+    }
+    public static void printResultRound(String userAnswer, String correctAnswer) {
+        if (userAnswer.equalsIgnoreCase(correctAnswer)) {
+            System.out.println("Correct!");
+        } else {
+            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+        }
     }
     public static int getRandomInt(int maxValue) {
         Random rnd = new Random();
