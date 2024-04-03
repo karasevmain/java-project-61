@@ -12,6 +12,7 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         return userName;
     }
+
     public static void playEven(int evenGameRounds) {
         String userName = playGreet();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
@@ -25,6 +26,7 @@ public class Engine {
         }
         System.out.println("Congratulations, " + userName + "!");
     }
+
     public static void playCalc(int calcGameRounds) {
         String userName = playGreet();
         System.out.println("What is the result of the expression?");
@@ -93,6 +95,29 @@ public class Engine {
         }
         System.out.println("Congratulations, " + userName + "!");
     }
+
+    public static void playPrime(int primeGameRounds) {
+        String userName = playGreet();
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        for (int i = 0; i < primeGameRounds; i++) {
+            int primeNumber = getRandomInt(100);
+            int sqrtNumber = (int) Math.sqrt(primeNumber) + 1;
+            String correctAnswer = "yes";
+            for (int j = 2; j <= sqrtNumber; j++) {
+                if (primeNumber % j == 0) {
+                    correctAnswer = "no";
+                    break;
+                }
+            }
+            System.out.println("Question: " + primeNumber);
+            System.out.print("Your answer: ");
+            Scanner scanner = new Scanner(System.in);
+            String userAnswer = scanner.nextLine();
+            printResultRound(userName, userAnswer, correctAnswer);
+        }
+        System.out.println("Congratulations, " + userName + "!");
+    }
+
     public static void printResultRound(String username, String userAnswer, String correctAnswer) {
         if (userAnswer.equalsIgnoreCase(correctAnswer)) {
             System.out.println("Correct!");
@@ -101,6 +126,7 @@ public class Engine {
             System.out.println("Let's try again, " + username);
         }
     }
+
     public static int getRandomInt(int maxValue) {
         Random rnd = new Random();
         return rnd.nextInt(maxValue);
