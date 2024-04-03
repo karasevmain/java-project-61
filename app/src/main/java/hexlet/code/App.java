@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         String[] gameList = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
-        int gameRounds = 3;
+        int gameRounds = 2;
         System.out.println("Please enter the game number and press Enter.");
         String selectedGame = sendGameList(gameList);
         switch (selectedGame) {
