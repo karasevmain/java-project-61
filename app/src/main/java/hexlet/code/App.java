@@ -12,7 +12,7 @@ public class App {
             case "0":
                 break;
             case "1":
-                Engine.playGreet(winScore);
+                Engine.playGreet();
                 break;
             case "2":
                 Engine.playEven(winScore);
