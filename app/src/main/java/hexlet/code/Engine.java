@@ -13,12 +13,13 @@ public class Engine {
         return userName;
     }
 
-    public static void playEven() {
+    public static void playEven(int winScore) {
         String userName = playGreet();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int score = 0;
-        while (score < 3) {
-            int number = getRandomInt(100);
+        int maxRandomInt = 100;
+        while (score < winScore) {
+            int number = getRandomInt(maxRandomInt);
             System.out.print("Question: " + number + "\nYour answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
@@ -28,18 +29,18 @@ public class Engine {
             }
             score++;
         }
-        if (score == 3) {
+        if (score == winScore) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
 
-    public static void playCalc() {
+    public static void playCalc(int winScore) {
         String userName = playGreet();
         System.out.println("What is the result of the expression?");
         int score = 0;
         int maxRandomInt = 20;
         int operationCount = 2;
-        while(score < 3) {
+        while (score < winScore) {
             int firstNumber = getRandomInt(maxRandomInt);
             int secondNumber = getRandomInt(maxRandomInt);
             int operationNumber = getRandomInt(operationCount);
@@ -62,17 +63,17 @@ public class Engine {
             }
             score++;
         }
-        if (score == 3) {
+        if (score == winScore) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
 
-    public static void playGCD() {
+    public static void playGCD(int winScore) {
         String userName = playGreet();
         System.out.println("Find the greatest common divisor of given numbers.");
         int maxRandomInt = 100;
         int score = 0;
-        while (score < 3) {
+        while (score < winScore) {
             int firstNumber = getRandomInt(maxRandomInt) + 1;
             int secondNumber = getRandomInt(maxRandomInt) + 1;
             System.out.println("Question: " + firstNumber + " " + secondNumber);
@@ -85,19 +86,22 @@ public class Engine {
             }
             score++;
         }
-        if (score == 3) {
+        if (score == winScore) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
 
-    public static void playProgression() {
+    public static void playProgression(int winScore) {
         String userName = playGreet();
         System.out.println("What number is missing in the progression?");
+        int maxRandomInt = 100;
+        int maxStepProgression = 10;
+        int maxLengthProgression = 5;
         int score = 0;
-        while (score < 3) {
-            int initProgression = getRandomInt(100);
-            int stepProgression = getRandomInt(10) + 1;
-            int lengthProgression = getRandomInt(5) + 5;
+        while (score < winScore) {
+            int initProgression = getRandomInt(maxRandomInt);
+            int stepProgression = getRandomInt(maxStepProgression) + 1;
+            int lengthProgression = getRandomInt(maxLengthProgression) + 5;
             int replacementNumber = getRandomInt(lengthProgression);
             String[] progression = new String[lengthProgression];
             progression[0] = String.valueOf(initProgression);
@@ -115,16 +119,16 @@ public class Engine {
             }
             score++;
         }
-        if (score == 3) {
+        if (score == winScore) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
 
-    public static void playPrime() {
+    public static void playPrime(int winScore) {
         String userName = playGreet();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int score = 0;
-        while (score < 3){
+        while (score < winScore) {
             int primeNumber = getRandomInt(100);
             int sqrtNumber = (int) Math.sqrt(primeNumber) + 1;
             String correctAnswer = "yes";
@@ -143,7 +147,7 @@ public class Engine {
             }
             score++;
         }
-        if (score == 3) {
+        if (score == winScore) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

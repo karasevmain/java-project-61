@@ -6,27 +6,28 @@ public class App {
     public static void main(String[] args) {
         String[] gameList = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
         System.out.println("Please enter the game number and press Enter.");
+        int winScore = 3;
         String selectedGame = sendGameList(gameList);
         switch (selectedGame) {
             case "0":
                 break;
             case "1":
-                Engine.playGreet();
+                Engine.playGreet(winScore);
                 break;
             case "2":
-                Engine.playEven();
+                Engine.playEven(winScore);
                 break;
             case "3":
-                Engine.playCalc();
+                Engine.playCalc(winScore);
                 break;
             case "4":
-                Engine.playGCD();
+                Engine.playGCD(winScore);
                 break;
             case "5":
-                Engine.playProgression();
+                Engine.playProgression(winScore);
                 break;
             case "6":
-                Engine.playPrime();
+                Engine.playPrime(winScore);
                 break;
             default:
                 System.out.println("Error command number");
