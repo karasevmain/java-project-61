@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-    final static int WIN_SCORE = 3;
+    static final int WIN_SCORE = 3;
     public static void main(String[] args) {
         String[] gameList = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
         System.out.println("Please enter the game number and press Enter.");

@@ -125,8 +125,8 @@ public class Engine {
             int primeNumber = getRandomInt(MAX_RANDOM_INT);
             int sqrtNumber = (int) Math.sqrt(primeNumber) + 1;
             String correctAnswer = "yes";
-            for (int j = 2; j <= sqrtNumber; j++) {
-                if (primeNumber % j == 0) {
+            for (int i = 2; i <= sqrtNumber; i++) {
+                if (primeNumber % i == 0) {
                     correctAnswer = "no";
                     break;
                 }
