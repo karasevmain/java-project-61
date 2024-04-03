@@ -4,11 +4,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    static final int maxRandomInt = 100;
-    static final int maxStepProgression = 10;
-    static final int maxLengthProgression = 5;
-    static final int minLengthProgression = 5;
-    static final int operationCount = 2;
+    static final int MAX_RANDOM_INT = 100;
+    static final int MAX_STEP_PROGRESSION = 10;
+    static final int MAX_LENGTH_PROGRESSION = 5;
+    static final int MIN_LENGTH_PROGRESSION = 5;
+    static final int OPERATION_COUNT = 2;
     public static String playGreet() {
         System.out.println("Welcome to the Brain Games!");
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class Engine {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int score = 0;
         while (score < winScore) {
-            int number = getRandomInt(maxRandomInt);
+            int number = getRandomInt(MAX_RANDOM_INT);
             System.out.print("Question: " + number + "\nYour answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
@@ -41,9 +41,9 @@ public class Engine {
         System.out.println("What is the result of the expression?");
         int score = 0;
         while (score < winScore) {
-            int firstNumber = getRandomInt(maxRandomInt);
-            int secondNumber = getRandomInt(maxRandomInt);
-            int operationNumber = getRandomInt(operationCount);
+            int firstNumber = getRandomInt(MAX_RANDOM_INT);
+            int secondNumber = getRandomInt(MAX_RANDOM_INT);
+            int operationNumber = getRandomInt(OPERATION_COUNT);
             int correctAnswer;
             if (operationNumber == 0) {
                 System.out.println("Question: " + firstNumber + " + " + secondNumber);
@@ -72,8 +72,8 @@ public class Engine {
         System.out.println("Find the greatest common divisor of given numbers.");
         int score = 0;
         while (score < winScore) {
-            int firstNumber = getRandomInt(maxRandomInt) + 1;
-            int secondNumber = getRandomInt(maxRandomInt) + 1;
+            int firstNumber = getRandomInt(MAX_RANDOM_INT) + 1;
+            int secondNumber = getRandomInt(MAX_RANDOM_INT) + 1;
             System.out.println("Question: " + firstNumber + " " + secondNumber);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
@@ -93,9 +93,9 @@ public class Engine {
         System.out.println("What number is missing in the progression?");
         int score = 0;
         while (score < winScore) {
-            int initProgression = getRandomInt(maxRandomInt);
-            int stepProgression = getRandomInt(maxStepProgression) + 1;
-            int lengthProgression = getRandomInt(maxLengthProgression) + minLengthProgression;
+            int initProgression = getRandomInt(MAX_RANDOM_INT);
+            int stepProgression = getRandomInt(MAX_STEP_PROGRESSION) + 1;
+            int lengthProgression = getRandomInt(MAX_LENGTH_PROGRESSION) + MIN_LENGTH_PROGRESSION;
             int replacementNumber = getRandomInt(lengthProgression);
             String[] progression = new String[lengthProgression];
             progression[0] = String.valueOf(initProgression);
@@ -122,7 +122,7 @@ public class Engine {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int score = 0;
         while (score < winScore) {
-            int primeNumber = getRandomInt(maxRandomInt);
+            int primeNumber = getRandomInt(MAX_RANDOM_INT);
             int sqrtNumber = (int) Math.sqrt(primeNumber) + 1;
             String correctAnswer = "yes";
             for (int j = 2; j <= sqrtNumber; j++) {
