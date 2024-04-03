@@ -22,8 +22,10 @@ public class App {
                 break;
             case "4":
                 Engine.playGCD(gameRounds);
+                break;
             case "5":
                 Engine.playProgression(gameRounds);
+                break;
             default:
                 System.out.println("Error command number");
                 break;

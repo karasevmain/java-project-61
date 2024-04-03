@@ -67,10 +67,31 @@ public class Engine {
             int correctAnswer = getGCD(firstNumber, secondNumber);
             printResultRound(userAnswer, String.valueOf(correctAnswer));
         }
+        System.out.println("Congratulations, " + userName + "!");
     }
 
     public static void playProgression(int progressionGameRounds){
-
+        String userName = playGreet();
+        System.out.println("What number is missing in the progression?");
+        for (int i = 0 ; i < progressionGameRounds; i++) {
+            int initProgression = getRandomInt(100);
+            int stepProgression = getRandomInt(10) + 1;
+            int lengthProgression = getRandomInt(5) + 5;
+            int replacementNumber = getRandomInt(lengthProgression);
+            String[] progression = new String[lengthProgression];
+            progression[0] = String.valueOf(initProgression);
+            for (int j = 1; j < lengthProgression; j++) {
+                progression[j] = String.valueOf(j * stepProgression + initProgression);
+            }
+            progression[replacementNumber] = "..";
+            System.out.println("Question: " + String.join(" ", progression));
+            System.out.print("Your answer: ");
+            Scanner scanner = new Scanner(System.in);
+            String userAnswer = scanner.nextLine();
+            String correctAnswer = String.valueOf(initProgression + replacementNumber * stepProgression);
+            printResultRound(userAnswer, correctAnswer);
+        }
+        System.out.println("Congratulations, " + userName + "!");
     }
     public static void printResultRound(String userAnswer, String correctAnswer) {
         if (userAnswer.equalsIgnoreCase(correctAnswer)) {
