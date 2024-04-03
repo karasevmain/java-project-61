@@ -154,7 +154,7 @@ public class Engine {
             return true;
         } else {
             System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            System.out.println("Let's try again, " + username);
+            System.out.println("Let's try again, " + username + "!");
             return false;
         }
     }
