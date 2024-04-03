@@ -22,7 +22,9 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
             String correctAnswer = number % 2 == 0 ? "yes" : "no";
-            printResultRound(userName, userAnswer, correctAnswer);
+            if (!resultRound(userName, userAnswer, correctAnswer)) {
+                break;
+            }
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -50,7 +52,9 @@ public class Engine {
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
-            printResultRound(userName, userAnswer, String.valueOf(correctAnswer));
+            if (!resultRound(userName, userAnswer, String.valueOf(correctAnswer))) {
+                break;
+            }
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -67,7 +71,9 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
             int correctAnswer = getGCD(firstNumber, secondNumber);
-            printResultRound(userName, userAnswer, String.valueOf(correctAnswer));
+            if (!resultRound(userName, userAnswer, String.valueOf(correctAnswer))) {
+                break;
+            }
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -91,7 +97,9 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
             String correctAnswer = String.valueOf(initProgression + replacementNumber * stepProgression);
-            printResultRound(userName, userAnswer, correctAnswer);
+            if (!resultRound(userName, userAnswer, correctAnswer)) {
+                break;
+            }
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -113,17 +121,21 @@ public class Engine {
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
-            printResultRound(userName, userAnswer, correctAnswer);
+            if (!resultRound(userName, userAnswer, correctAnswer)) {
+                break;
+            }
         }
         System.out.println("Congratulations, " + userName + "!");
     }
 
-    public static void printResultRound(String username, String userAnswer, String correctAnswer) {
+    public static boolean resultRound(String username, String userAnswer, String correctAnswer) {
         if (userAnswer.equalsIgnoreCase(correctAnswer)) {
             System.out.println("Correct!");
+            return true;
         } else {
             System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
             System.out.println("Let's try again, " + username);
+            return false;
         }
     }
 
