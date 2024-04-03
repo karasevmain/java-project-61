@@ -70,10 +70,10 @@ public class Engine {
         System.out.println("Congratulations, " + userName + "!");
     }
 
-    public static void playProgression(int progressionGameRounds){
+    public static void playProgression(int progressionGameRounds) {
         String userName = playGreet();
         System.out.println("What number is missing in the progression?");
-        for (int i = 0 ; i < progressionGameRounds; i++) {
+        for (int i = 0; i < progressionGameRounds; i++) {
             int initProgression = getRandomInt(100);
             int stepProgression = getRandomInt(10) + 1;
             int lengthProgression = getRandomInt(5) + 5;
@@ -93,7 +93,7 @@ public class Engine {
         }
         System.out.println("Congratulations, " + userName + "!");
     }
-    public static void printResultRound(String username,String userAnswer, String correctAnswer) {
+    public static void printResultRound(String username, String userAnswer, String correctAnswer) {
         if (userAnswer.equalsIgnoreCase(correctAnswer)) {
             System.out.println("Correct!");
         } else {
@@ -109,7 +109,7 @@ public class Engine {
     public static int getGCD(int firstNumber, int secondNumber) {
         while (firstNumber != secondNumber) {
             if (firstNumber > secondNumber) {
-                firstNumber -=secondNumber;
+                firstNumber -= secondNumber;
             } else {
                 secondNumber -= firstNumber;
             }
