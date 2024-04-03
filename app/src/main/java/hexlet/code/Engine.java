@@ -21,7 +21,7 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
             String correctAnswer = number % 2 == 0 ? "yes" : "no";
-            printResultRound(userAnswer, correctAnswer);
+            printResultRound(userName, userAnswer, correctAnswer);
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -48,7 +48,7 @@ public class Engine {
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
-            printResultRound(userAnswer, String.valueOf(correctAnswer));
+            printResultRound(userName, userAnswer, String.valueOf(correctAnswer));
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -65,7 +65,7 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
             int correctAnswer = getGCD(firstNumber, secondNumber);
-            printResultRound(userAnswer, String.valueOf(correctAnswer));
+            printResultRound(userName, userAnswer, String.valueOf(correctAnswer));
         }
         System.out.println("Congratulations, " + userName + "!");
     }
@@ -89,15 +89,16 @@ public class Engine {
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.nextLine();
             String correctAnswer = String.valueOf(initProgression + replacementNumber * stepProgression);
-            printResultRound(userAnswer, correctAnswer);
+            printResultRound(userName, userAnswer, correctAnswer);
         }
         System.out.println("Congratulations, " + userName + "!");
     }
-    public static void printResultRound(String userAnswer, String correctAnswer) {
+    public static void printResultRound(String username,String userAnswer, String correctAnswer) {
         if (userAnswer.equalsIgnoreCase(correctAnswer)) {
             System.out.println("Correct!");
         } else {
             System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+            System.out.println("Let's try again, " + username);
         }
     }
     public static int getRandomInt(int maxValue) {
@@ -109,9 +110,9 @@ public class Engine {
         while (firstNumber != secondNumber) {
             if (firstNumber > secondNumber) {
                 firstNumber -=secondNumber;
-            } else if (firstNumber < secondNumber) {
+            } else {
                 secondNumber -= firstNumber;
-            } else return firstNumber;
+            }
         }
         return firstNumber;
     }
