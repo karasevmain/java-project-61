@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         String[] gameList = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
-        int gameRounds = 3;
         System.out.println("Please enter the game number and press Enter.");
         String selectedGame = sendGameList(gameList);
         switch (selectedGame) {
@@ -15,19 +14,19 @@ public class App {
                 Engine.playGreet();
                 break;
             case "2":
-                Engine.playEven(gameRounds);
+                Engine.playEven();
                 break;
             case "3":
-                Engine.playCalc(gameRounds);
+                Engine.playCalc();
                 break;
             case "4":
-                Engine.playGCD(gameRounds);
+                Engine.playGCD();
                 break;
             case "5":
-                Engine.playProgression(gameRounds);
+                Engine.playProgression();
                 break;
             case "6":
-                Engine.playPrime(gameRounds);
+                Engine.playPrime();
                 break;
             default:
                 System.out.println("Error command number");
