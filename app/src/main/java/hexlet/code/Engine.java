@@ -28,10 +28,12 @@ public class Engine {
     public static void playCalc(int calcGameRounds) {
         String userName = playGreet();
         System.out.println("What is the result of the expression?");
+        int maxRandomInt = 20;
+        int operationCount = 2;
         for (int i = 0; i < calcGameRounds; i++) {
-            int firstNumber = getRandomInt(20);
-            int secondNumber = getRandomInt(20);
-            int operationNumber = getRandomInt(2);
+            int firstNumber = getRandomInt(maxRandomInt);
+            int secondNumber = getRandomInt(maxRandomInt);
+            int operationNumber = getRandomInt(operationCount);
             int correctAnswer;
             if (operationNumber == 0) {
                 System.out.println("Question: " + firstNumber + " + " + secondNumber);
@@ -50,6 +52,26 @@ public class Engine {
         }
         System.out.println("Congratulations, " + userName + "!");
     }
+
+    public static void playGCD(int nodGameRounds) {
+        String userName = playGreet();
+        System.out.println("Find the greatest common divisor of given numbers.");
+        int maxRandomInt = 100;
+        for (int i = 0; i < nodGameRounds; i++) {
+            int firstNumber = getRandomInt(maxRandomInt) + 1;
+            int secondNumber = getRandomInt(maxRandomInt) + 1;
+            System.out.println("Question: " + firstNumber + " " + secondNumber);
+            System.out.print("Your answer: ");
+            Scanner scanner = new Scanner(System.in);
+            String userAnswer = scanner.nextLine();
+            int correctAnswer = getGCD(firstNumber, secondNumber);
+            printResultRound(userAnswer, String.valueOf(correctAnswer));
+        }
+    }
+
+    public static void playProgression(int progressionGameRounds){
+
+    }
     public static void printResultRound(String userAnswer, String correctAnswer) {
         if (userAnswer.equalsIgnoreCase(correctAnswer)) {
             System.out.println("Correct!");
@@ -60,5 +82,16 @@ public class Engine {
     public static int getRandomInt(int maxValue) {
         Random rnd = new Random();
         return rnd.nextInt(maxValue);
+    }
+
+    public static int getGCD(int firstNumber, int secondNumber) {
+        while (firstNumber != secondNumber) {
+            if (firstNumber > secondNumber) {
+                firstNumber -=secondNumber;
+            } else if (firstNumber < secondNumber) {
+                secondNumber -= firstNumber;
+            } else return firstNumber;
+        }
+        return firstNumber;
     }
 }
