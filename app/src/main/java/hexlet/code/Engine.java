@@ -4,6 +4,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+    static final int maxRandomInt = 100;
+    static final int maxStepProgression = 10;
+    static final int maxLengthProgression = 5;
+    static final int minLengthProgression = 5;
+    static final int operationCount = 2;
     public static String playGreet() {
         System.out.println("Welcome to the Brain Games!");
         Scanner scanner = new Scanner(System.in);
@@ -17,7 +22,6 @@ public class Engine {
         String userName = playGreet();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int score = 0;
-        int maxRandomInt = 100;
         while (score < winScore) {
             int number = getRandomInt(maxRandomInt);
             System.out.print("Question: " + number + "\nYour answer: ");
@@ -38,8 +42,6 @@ public class Engine {
         String userName = playGreet();
         System.out.println("What is the result of the expression?");
         int score = 0;
-        int maxRandomInt = 20;
-        int operationCount = 2;
         while (score < winScore) {
             int firstNumber = getRandomInt(maxRandomInt);
             int secondNumber = getRandomInt(maxRandomInt);
@@ -71,7 +73,6 @@ public class Engine {
     public static void playGCD(int winScore) {
         String userName = playGreet();
         System.out.println("Find the greatest common divisor of given numbers.");
-        int maxRandomInt = 100;
         int score = 0;
         while (score < winScore) {
             int firstNumber = getRandomInt(maxRandomInt) + 1;
@@ -94,14 +95,11 @@ public class Engine {
     public static void playProgression(int winScore) {
         String userName = playGreet();
         System.out.println("What number is missing in the progression?");
-        int maxRandomInt = 100;
-        int maxStepProgression = 10;
-        int maxLengthProgression = 5;
         int score = 0;
         while (score < winScore) {
             int initProgression = getRandomInt(maxRandomInt);
             int stepProgression = getRandomInt(maxStepProgression) + 1;
-            int lengthProgression = getRandomInt(maxLengthProgression) + 5;
+            int lengthProgression = getRandomInt(maxLengthProgression) + minLengthProgression;
             int replacementNumber = getRandomInt(lengthProgression);
             String[] progression = new String[lengthProgression];
             progression[0] = String.valueOf(initProgression);
@@ -129,7 +127,7 @@ public class Engine {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int score = 0;
         while (score < winScore) {
-            int primeNumber = getRandomInt(100);
+            int primeNumber = getRandomInt(maxRandomInt);
             int sqrtNumber = (int) Math.sqrt(primeNumber) + 1;
             String correctAnswer = "yes";
             for (int j = 2; j <= sqrtNumber; j++) {
