@@ -20,7 +20,7 @@ public class Engine {
         String userName = Greet.playGreet();
         if (!gameNumber.equals("1")) {
             for (int i = 0; i < ROUND_COUNT; i++) {
-                String userAnswer = playGame(gameNumber);
+                String userAnswer = startGame(gameNumber);
                 if (!resultRound(userName, userAnswer)) {
                     System.exit(0);
                 }
@@ -28,7 +28,7 @@ public class Engine {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
-    public static String playGame(String gameNumber) {
+    public static String startGame(String gameNumber) {
         switch (gameNumber) {
             case "0":
                 break;
