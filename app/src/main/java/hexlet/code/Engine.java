@@ -54,7 +54,12 @@ public class Engine {
         System.out.print("Your answer: ");
         Scanner scanner = new Scanner(System.in);
         String userAnswer = scanner.nextLine();
-        System.out.println(userAnswer.equalsIgnoreCase(correctAnswer) ? "Correct!" : ("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.\nLet's try again, " + userName + "!"));
+        if (userAnswer.equalsIgnoreCase(correctAnswer)) {
+            System.out.println("Correct!");
+        } else {
+            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+            System.out.println("Let's try again, " + userName + "!");
+        }
         return userAnswer.equalsIgnoreCase(correctAnswer);
     }
 }
