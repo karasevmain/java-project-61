@@ -7,7 +7,6 @@ import hexlet.code.Games.Greet;
 import hexlet.code.Games.Prime;
 import hexlet.code.Games.Progression;
 
-
 import java.util.Scanner;
 
 public class Engine {
@@ -20,7 +19,7 @@ public class Engine {
         String userName = Greet.playGreet();
         if (!gameNumber.equals("1")) {
             for (int i = 0; i < ROUND_COUNT; i++) {
-                String userAnswer = startGame(gameNumber);
+                String userAnswer = startRound(gameNumber);
                 if (!resultRound(userName, userAnswer)) {
                     System.exit(0);
                 }
@@ -28,7 +27,7 @@ public class Engine {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
-    public static String startGame(String gameNumber) {
+    public static String startRound(String gameNumber) {
         switch (gameNumber) {
             case "0":
                 break;
