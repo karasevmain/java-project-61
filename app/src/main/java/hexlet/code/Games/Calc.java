@@ -3,19 +3,18 @@ package hexlet.code.Games;
 import hexlet.code.Util;
 
 public class Calc {
-    static final int MAX_RANDOM_INT = 100;
     static final int OPERATION_COUNT = 2;
     public static String playCalc() {
         System.out.println("What is the result of the expression?");
-        int score = 0;
-        int firstNumber = Util.getRandomInt(MAX_RANDOM_INT);
-        int secondNumber = Util.getRandomInt(MAX_RANDOM_INT);
+        char[] operations = {'+', '-', '*'};
+        int firstNumber = Util.getRandomInt();
+        int secondNumber = Util.getRandomInt();
         int operationNumber = Util.getRandomInt(OPERATION_COUNT);
         int correctAnswer;
-        if (operationNumber == 0) {
+        if (operations[operationNumber] == '+') {
             System.out.println("Question: " + firstNumber + " + " + secondNumber);
             correctAnswer = firstNumber + secondNumber;
-        } else if (operationNumber == 1) {
+        } else if (operations[operationNumber] == '-') {
             System.out.println("Question: " + firstNumber + " - " + secondNumber);
             correctAnswer = firstNumber - secondNumber;
         } else {

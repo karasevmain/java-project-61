@@ -3,13 +3,12 @@ package hexlet.code.Games;
 import hexlet.code.Util;
 
 public class Progression {
-    static final int MAX_RANDOM_INT = 100;
     static final int MAX_STEP_PROGRESSION = 10;
     static final int MAX_LENGTH_PROGRESSION = 5;
     static final int MIN_LENGTH_PROGRESSION = 5;
     public static String playProgression() {
         System.out.println("What number is missing in the progression?");
-        int initProgression = Util.getRandomInt(MAX_RANDOM_INT);
+        int initProgression = Util.getRandomInt();
         int stepProgression = Util.getRandomInt(MAX_STEP_PROGRESSION) + 1;
         int lengthProgression = Util.getRandomInt(MAX_LENGTH_PROGRESSION) + MIN_LENGTH_PROGRESSION;
         int replacementNumber = Util.getRandomInt(lengthProgression);
