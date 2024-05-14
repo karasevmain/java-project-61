@@ -4,7 +4,7 @@ import hexlet.code.Util;
 
 public class Prime {
     static final int ROUND_COUNT = 3;
-    static final int  RESULT_ELEMENTS = 2;
+    static final int  RESULT_ELEMENTS = 3;
     static final int  CONDITIONS_INDEX = 0;
     static final int  QUESTION_INDEX = 1;
     static final int  ANSWER_INDEX = 2;
@@ -16,8 +16,8 @@ public class Prime {
             int primeNumber = Util.getRandomInt();
             int sqrtNumber = (int) Math.sqrt(primeNumber) + 1;
             correctAnswer = "yes";
-            for (int j = 2; i <= sqrtNumber; i++) {
-                if (primeNumber % i == 0) {
+            for (int j = 2; i <= sqrtNumber; j++) {
+                if (primeNumber % j == 0) {
                     correctAnswer = "no";
                     break;
                 }
