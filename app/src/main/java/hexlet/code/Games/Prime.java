@@ -16,7 +16,7 @@ public class Prime {
             int primeNumber = Util.getRandomInt();
             int sqrtNumber = (int) Math.sqrt(primeNumber) + 1;
             correctAnswer = "yes";
-            for (int j = 2; i <= sqrtNumber; j++) {
+            for (int j = 2; j <= sqrtNumber; j++) {
                 if (primeNumber % j == 0) {
                     correctAnswer = "no";
                     break;
