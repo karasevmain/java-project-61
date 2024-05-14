@@ -19,7 +19,7 @@ public class App {
         String gameNumber = pickGame();
         Engine.playGames(gameNumber);
     }
-    public static String startRound(String gameNumber) {
+    public static String[][] startRound(String gameNumber) {
         switch (gameNumber) {
             case "0":
                 break;
@@ -39,7 +39,7 @@ public class App {
                 System.out.println("Error game command");
                 System.exit(0);
         }
-        return "";
+        return null;
     }
     public static String pickGame() {
         System.out.println("Please enter the game number and press Enter.");

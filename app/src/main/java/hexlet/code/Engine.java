@@ -5,11 +5,18 @@ import java.util.Scanner;
 
 public class Engine {
     static final int ROUND_COUNT = 3;
+    static final int  CONDITIONS_INDEX = 0;
+    static final int  QUESTION_INDEX = 1;
+    static final int  ANSWER_INDEX = 2;
     public static void playGames(String gameNumber) {
         String userName = Greet.playGreet();
         if (!gameNumber.equals("1")) {
+            String[][] resultGame = App.startRound(gameNumber);
+            System.out.println(resultGame[0][CONDITIONS_INDEX]);
             for (int i = 0; i < ROUND_COUNT; i++) {
-                String correctAnswer = App.startRound(gameNumber);
+                String question = resultGame[i][QUESTION_INDEX];
+                System.out.println(question);
+                String correctAnswer = resultGame[i][ANSWER_INDEX];
                 if (!resultRound(userName, correctAnswer)) {
                     System.exit(0);
                 }
