@@ -14,7 +14,7 @@ public class Calc {
         String correctAnswer;
         String[][] result = new String[ROUND_COUNT][RESULT_ELEMENTS];
         char[] operations = {'+', '-', '*'};
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUND_COUNT; i++) {
             int firstNumber = Util.getRandomInt();
             int secondNumber = Util.getRandomInt();
             int operationNumber = Util.getRandomInt(OPERATION_COUNT);
